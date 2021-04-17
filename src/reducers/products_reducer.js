@@ -18,14 +18,14 @@ const products_reducer = (state, action) => {
       return { ...state, products_loading: true };
 
     case GET_PRODUCTS_SUCCESS: {
-      const featuerd_products = action.payload.filter(
+      const featured_products = action.payload.filter(
         (product) => product.featured === true
       );
       return {
         ...state,
         products_loading: false,
         products: action.payload,
-        featuerd_products,
+        featured_products,
       };
     }
 
