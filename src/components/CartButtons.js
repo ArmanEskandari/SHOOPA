@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "../context/products_context";
 
 const CartButtons = () => {
+  const data = useProductsContext();
+  const { closeSidebar } = data;
   return (
     <Wrapper className="cart-btn-wrapper">
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={() => closeSidebar()}>
         Cart
         <span className="cart-container">
           <FaShoppingCart />
