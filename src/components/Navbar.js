@@ -17,10 +17,7 @@ const Navbar = () => {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
-          <button
-            type="button"
-            className="nav-toggle"
-            onClick={() => openSidebar()}>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
