@@ -5,39 +5,33 @@ import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
 import { Link } from "react-router-dom";
 import CartButtons from "./CartButtons";
+import { useProductsContext } from "../context/products_context";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const data = useProductsContext();
+  const { isSidebarOpen, closeSidebar } = data;
   return (
     <SidebarContainer>
-      <aside className={isOpen ? "sidebar show-sidebar" : "sidebar"}>
+      <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="logo" />
           <button
             className="close-btn"
             type="button"
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => closeSidebar()}>
             <FaTimes />
           </button>
         </div>
         <ul className="links">
           {links.map(({ id, text, url }) => (
             <li key={id}>
-              <Link
-                to={url}
-                onClick={() => {
-                  console.log("close sidebar");
-                }}>
+              <Link to={url} onClick={() => closeSidebar()}>
                 {text}
               </Link>
             </li>
           ))}
           <li>
-            <Link
-              to="/checkout"
-              onClick={() => {
-                console.log("close sidebar");
-              }}>
+            <Link to="/checkout" onClick={() => closeSidebar()}>
               checkout
             </Link>
           </li>
