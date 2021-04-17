@@ -7,8 +7,8 @@ import PageHero from "../components/PageHero";
 const AboutPage = () => {
   return (
     <main>
+      <PageHero title="about" />
       <Wrapper className="page section section-center">
-        <PageHero title="about" />
         <img src={aboutImg} alt="shoe image" />
         <article>
           <div className="title">
