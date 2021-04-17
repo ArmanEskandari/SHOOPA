@@ -2,10 +2,33 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heroBcg from "../assets/hero-bcg.jpeg";
-// import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg2 from "../assets/hero-bcg-2.jpeg";
 
 const Hero = () => {
-  return <h4>hero</h4>;
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>
+          design your <br />
+          comfort zone
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus
+          turpis in eu mi. Molestie at elementum eu facilisis sed. Pharetra
+          convallis posuere morbi leo urna. Vestibulum lorem sed risus ultricies
+          tristique nulla aliquet.
+        </p>
+        <Link to="/" className="btn hero-btn">
+          shop now
+        </Link>
+      </article>
+      <article className="img-container">
+        <img src={heroBcg} alt="hero image 1" className="main-img" />
+        <img src={heroBcg2} alt="hero image 2" className="accent-img" />
+      </article>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
