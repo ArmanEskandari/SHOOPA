@@ -1,33 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import ContactForm from "./ContactForm";
+import { useForm, ValidationError } from "@formspree/react";
 
-const Contact = () => {
+function ContactForm() {
+  const [state, handleSubmit] = useForm("xeqvogeo");
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
   return (
-    <Wrapper>
-      <div className="section-center">
-        <h3>Join our newsletter to get 20% off</h3>
-        <div className="content">
-          <p>
-            iaculis at erat pellentesque adipiscing commodo elit at imperdiet
-            dui accumsan sit amet nulla facilisi morbi tempus iaculis urna id
-          </p>
-          <ContactForm />
-        </div>
-      </div>
-    </Wrapper>
+    <form onSubmit={handleSubmit} className="contact-form">
+      <input
+        className="form-input"
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+      />
+      <ValidationError prefix="Email" field="email" errors={state.errors} />
+      <ValidationError prefix="Message" field="message" errors={state.errors} />
+      <button className="submit-btn" type="submit" disabled={state.submitting}>
+        Submit
+      </button>
+    </form>
   );
-};
+}
+
 const Wrapper = styled.section`
-  padding: 5rem 0;
-  h3 {
-    text-transform: none;
-  }
-  p {
-    line-height: 2;
-    max-width: 45em;
-    color: var(--clr-grey-5);
-  }
   .contact-form {
     width: 90vw;
     max-width: 500px;
@@ -66,21 +63,6 @@ const Wrapper = styled.section`
   .submit-btn:hover {
     color: var(--clr-white);
   }
-  @media (min-width: 992px) {
-    .content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 8rem;
-      margin-top: 2rem;
-    }
-    p {
-      margin-bottom: 0;
-    }
-  }
-  @media (min-width: 1280px) {
-    padding: 15rem 0;
-  }
 `;
 
-export default Contact;
+export default ContactForm;
