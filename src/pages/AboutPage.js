@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import aboutImg from "../assets/hero-bcg.jpeg";
 import { Link } from "react-router-dom";
-import PageHero from "../components/PageHero";
+import { PageHero } from "../components";
 
 const AboutPage = () => {
   return (
