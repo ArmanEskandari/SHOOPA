@@ -12,9 +12,11 @@ import Loading from "./Loading";
 import ProductImages from "./ProductImages";
 import Stars from "./Stars";
 import AddToCart from "./AddToCart";
+import AmountButtons from "./AmountButtons";
 
 export {
   AddToCart,
+  AmountButtons,
   CartButtons,
   Contact,
   Error,
