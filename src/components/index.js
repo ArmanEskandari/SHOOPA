@@ -9,8 +9,12 @@ import PageHero from "./PageHero";
 import Services from "./Services";
 import Error from "./Error";
 import Loading from "./Loading";
+import ProductImages from "./ProductImages";
+import Stars from "./Stars";
+import AddToCart from "./AddToCart";
 
 export {
+  AddToCart,
   CartButtons,
   Contact,
   Error,
@@ -20,6 +24,8 @@ export {
   Loading,
   Navbar,
   PageHero,
+  ProductImages,
   Services,
   Sidebar,
+  Stars,
 };
