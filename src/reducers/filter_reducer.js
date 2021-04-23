@@ -30,6 +30,53 @@ const filter_reducer = (state, action) => {
         grid_view: false,
       };
 
+    case UPDATE_SORT:
+      return {
+        ...state,
+        sort: action.payload,
+      };
+    case SORT_PRODUCTS:
+      const { sort, filtered_products } = state;
+      let tempProducts = [...filtered_products];
+
+      if (sort === "price-lowest") {
+        tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+
+        /******* another way to sort ********/
+        /* tempProducts = tempProducts.sort((a, b) => {
+          if (a.price < b.price) {
+             // a will be displayed before b
+             return -1;
+           }
+           if (a.price > b.price) {
+             // b will be displayed before a
+             return 1;
+           }
+           // if non of the above conditions were true
+           // a remains at its place
+           return 0;
+         });
+        */
+      }
+
+      if (sort === "price-highest") {
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      }
+
+      if (sort === "name-a") {
+        tempProducts = tempProducts.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+      }
+
+      if (sort === "name-z") {
+        tempProducts = tempProducts.sort((a, b) =>
+          b.name.localeCompare(a.name)
+        );
+      }
+
+      return { ...state, filtered_products: tempProducts };
+
     default:
       return state;
   }
