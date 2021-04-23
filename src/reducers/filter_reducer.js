@@ -12,10 +12,13 @@ import {
 const filter_reducer = (state, action) => {
   switch (action.type) {
     case LOAD_PRODUCTS:
+      let maxPrice = action.payload.map((product) => product.price);
+      maxPrice = Math.max(...maxPrice) * 1000;
       return {
         ...state,
         all_products: [...action.payload],
         filtered_products: [...action.payload],
+        filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
       };
 
     case SET_GRIDVIEW:
