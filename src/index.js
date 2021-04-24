@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context";
+import { CartProvider } from "./context/cart_context";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <ProductsProvider>
       <FilterProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </FilterProvider>
     </ProductsProvider>
   </React.StrictMode>,
