@@ -18,11 +18,19 @@ import Sort from "./Sort";
 import ProductList from "./ProductList";
 import GridView from "./GridView";
 import ListView from "./ListView";
+import CartContent from "./CartContent";
+import CartColumns from "./CartColumns";
+import CartItem from "./CartItem";
+import CartTotals from "./CartTotals";
 
 export {
   AddToCart,
   AmountButtons,
   CartButtons,
+  CartContent,
+  CartColumns,
+  CartItem,
+  CartTotals,
   Contact,
   Error,
   FeaturedProducts,
