@@ -38,7 +38,7 @@ const filter_reducer = (state, action) => {
         ...state,
         sort: action.payload,
       };
-    case SORT_PRODUCTS:
+    case SORT_PRODUCTS: {
       const { sort, filtered_products } = state;
       let tempProducts = [...filtered_products];
 
@@ -79,6 +79,15 @@ const filter_reducer = (state, action) => {
       }
 
       return { ...state, filtered_products: tempProducts };
+    }
+
+    case UPDATE_FILTERS: {
+      const { name, value } = action.payload;
+      return { ...state, filters: { ...state.filters, [name]: value } };
+    }
+
+    case FILTER_PRODUCTS:
+      return { ...state };
 
     default:
       return state;
