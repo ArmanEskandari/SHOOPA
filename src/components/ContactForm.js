@@ -8,19 +8,28 @@ function ContactForm() {
     return <p>Thanks for joining!</p>;
   }
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
-      <input
-        className="form-input"
-        type="email"
-        name="email"
-        placeholder="Enter Email"
-      />
-      <ValidationError prefix="Email" field="email" errors={state.errors} />
-      <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <button className="submit-btn" type="submit" disabled={state.submitting}>
-        Submit
-      </button>
-    </form>
+    <Wrapper>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <input
+          className="form-input"
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
+        <button
+          className="submit-btn"
+          type="submit"
+          disabled={state.submitting}>
+          Submit
+        </button>
+      </form>
+    </Wrapper>
   );
 }
 

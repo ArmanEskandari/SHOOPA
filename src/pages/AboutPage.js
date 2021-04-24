@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import aboutImg from "../assets/hero-bcg.jpeg";
-import { Link } from "react-router-dom";
 import { PageHero } from "../components";
 
 const AboutPage = () => {
@@ -9,7 +8,7 @@ const AboutPage = () => {
     <main>
       <PageHero title="about" />
       <Wrapper className="page section section-center">
-        <img src={aboutImg} alt="shoe image" />
+        <img src={aboutImg} alt="furniture" />
         <article>
           <div className="title">
             <h2>our story</h2>
