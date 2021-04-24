@@ -68,9 +68,9 @@ const cart_reducer = (state, action) => {
         } else {
           return item;
         }
+        return { ...state, cart: tempCart };
       });
-
-      return { ...state, cart: tempCart };
+      break;
     }
 
     case COUNT_CART_TOTALS: {
@@ -92,9 +92,9 @@ const cart_reducer = (state, action) => {
     }
 
     default:
-      break;
+      return state;
   }
-  return state;
+
   // throw new Error(`No Matching "${action.type}" - action type`);
 };
 

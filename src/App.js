@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Footer, Navbar, Sidebar } from "./components";
 import {
   About,
@@ -8,7 +7,6 @@ import {
   Checkout,
   ErrorPage,
   Home,
-  PrivateRoute,
   Products,
   SingleProduct,
 } from "./pages";
