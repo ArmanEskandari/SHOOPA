@@ -13,7 +13,7 @@ const filter_reducer = (state, action) => {
   switch (action.type) {
     case LOAD_PRODUCTS:
       let maxPrice = action.payload.map((product) => product.price);
-      maxPrice = Math.max(...maxPrice) * 1000;
+      maxPrice = Math.max(...maxPrice);
       return {
         ...state,
         all_products: [...action.payload],
