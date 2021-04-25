@@ -26,7 +26,7 @@ const Hero = () => {
           convallis posuere morbi leo urna. Vestibulum lorem sed risus ultricies
           tristique nulla aliquet.
         </p>
-        <Link to="/" className="btn hero-btn">
+        <Link to="/products" className="btn hero-btn">
           shop now
         </Link>
       </article>
