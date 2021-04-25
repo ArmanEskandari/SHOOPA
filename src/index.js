@@ -5,18 +5,25 @@ import App from "./App";
 import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
+import { Auth0Provider } from "@auth0/auth0-react";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ProductsProvider>
-      <FilterProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </FilterProvider>
-    </ProductsProvider>
-  </React.StrictMode>,
+  <Auth0Provider
+    domain="arman-eskandari.us.auth0.com"
+    clientId="XJZTJ613FIbMRxtcNTzyAY1kebcPqdMw"
+    redirectUri={window.location.origin}
+    cacheLocation="localstorage">
+    <React.StrictMode>
+      <ProductsProvider>
+        <FilterProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </FilterProvider>
+      </ProductsProvider>
+    </React.StrictMode>
+  </Auth0Provider>,
   document.getElementById("root")
 );
 
