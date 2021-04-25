@@ -35,7 +35,7 @@ function ContactForm() {
 
 const Wrapper = styled.section`
   .contact-form {
-    width: 90vw;
+    width: 80vw;
     max-width: 500px;
     display: grid;
     grid-template-columns: 1fr auto;
