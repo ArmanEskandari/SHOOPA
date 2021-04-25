@@ -7,9 +7,11 @@ import PrivateRoute from "./PrivateRoute";
 import Products from "./ProductsPage";
 import SingleProduct from "./SingleProductPage";
 import ProductsPage from "./ProductsPage";
+import AuthWrapper from "./AuthWrapper";
 
 export {
   About,
+  AuthWrapper,
   Cart,
   Checkout,
   ErrorPage,
