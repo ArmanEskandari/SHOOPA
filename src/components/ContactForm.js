@@ -35,7 +35,7 @@ function ContactForm() {
 
 const Wrapper = styled.section`
   .contact-form {
-    width: 80vw;
+    width: 90vw;
     max-width: 500px;
     display: grid;
     grid-template-columns: 1fr auto;
@@ -43,17 +43,18 @@ const Wrapper = styled.section`
 
   .form-input,
   .submit-btn {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
     border: 2px solid var(--clr-black);
   }
   .form-input {
+    font-size: 1rem;
     border-right: none;
     color: var(--clr-grey-3);
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
   }
   .submit-btn {
+    font-size: 1rem;
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
   }
