@@ -10,7 +10,7 @@ const Services = () => {
           <h3>
             custom styles
             <br />
-            style your shoes
+            design your furnitures
           </h3>
           <p>
             rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
