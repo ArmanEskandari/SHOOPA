@@ -3,11 +3,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heroBcg from "../assets/hero-bcg.jpeg";
 import heroBcg2 from "../assets/hero-bcg-2.jpeg";
+import blob from "../assets/blob.svg";
 
 const Hero = () => {
   return (
     <Wrapper className="section-center">
-      <article className="content">
+      <article
+        className="content"
+        style={{
+          backgroundImage: `url(${blob})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}>
         <h1>
           design your <br />
           comfort zone
