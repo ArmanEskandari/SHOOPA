@@ -6,6 +6,7 @@ import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { UserProvider } from "./context/user_context";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -14,15 +15,17 @@ ReactDOM.render(
     clientId="XJZTJ613FIbMRxtcNTzyAY1kebcPqdMw"
     redirectUri={window.location.origin}
     cacheLocation="localstorage">
-    <React.StrictMode>
-      <ProductsProvider>
-        <FilterProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </FilterProvider>
-      </ProductsProvider>
-    </React.StrictMode>
+    <UserProvider>
+      <React.StrictMode>
+        <ProductsProvider>
+          <FilterProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </FilterProvider>
+        </ProductsProvider>
+      </React.StrictMode>
+    </UserProvider>
   </Auth0Provider>,
   document.getElementById("root")
 );
