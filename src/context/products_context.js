@@ -30,12 +30,10 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const openSidebar = () => {
-    console.log("opened");
     dispatch({ type: SIDEBAR_OPEN });
   };
 
   const closeSidebar = () => {
-    console.log("closed");
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
