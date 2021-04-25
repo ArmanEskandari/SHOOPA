@@ -46,7 +46,7 @@ const Wrapper = styled.section`
   article {
     border: 1px solid var(--clr-grey-8);
     border-radius: var(--radius);
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 0rem;
   }
   h4,
   h5,
